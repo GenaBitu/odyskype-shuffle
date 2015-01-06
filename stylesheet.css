@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+    padding: 50px;
+    font-family: "Ubuntu", Helvetica, sans-serif;
+}
+
+input[type=text] {
+    display: none;
+    outline: none;
+}
+
+textarea {
+    display: none;
+    height: 200px;
+    width: 700px;
+    box-shadow: inset 2px 2px 2px 0px #dddddd;
+    padding: 7px;
+    font-family: "Ubuntu", Helvetica, sans-serif;
+    outline: none;
+    resize: none;
+    overflow: auto;
+}
