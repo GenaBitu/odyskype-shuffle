@@ -5,19 +5,34 @@ body {
     font-family: "Ubuntu", Helvetica, sans-serif;
 }
 
-input[type=text] {
-    display: none;
-    outline: none;
-}
-
 textarea {
-    display: none;
-    height: 200px;
-    width: 700px;
     box-shadow: inset 2px 2px 2px 0px #dddddd;
     padding: 7px;
     font-family: "Ubuntu", Helvetica, sans-serif;
     outline: none;
     resize: none;
     overflow: auto;
+}
+
+.large {
+    height: 200px;
+    width: 700px;
+}
+
+.small {
+    height: 15px;
+    width: 200px;
+}
+
+.formfield label {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    margin-top: 4px;
+}
+
+.formfield textarea {
+    display: inline-block;
+    margin-left: 10px;
 }
