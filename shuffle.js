@@ -9,6 +9,13 @@ $(document).ready(function() {
         $("#generate").attr("disabled", true);
         $("#generate").hide();
         $("#name").val(name)
+        $.getJSON("data.json", function(data){
+            $.each(data.characters, function(i, field) {
+                if (field.name == name) {
+                    $("#text1").val(field.text1);
+                }
+            });
+        });
     }
     
     $("#generate").click(function() {
