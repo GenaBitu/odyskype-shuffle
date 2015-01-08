@@ -11,7 +11,7 @@ if(is_ajax()) {
             $data = json_decode($oldJSON, true);
             foreach ($data["characters"] as $key => $entry) {
                 if ($entry["name"] == $name) {
-                    //$data["characters"][$key]["available"] = false;
+                    //$data["characters"][$key]["available"] = false;             // odkomentovat před ostrým nasazením !
                 }
             }
             $newJSON = json_encode($data);

@@ -56,7 +56,7 @@ $(document).ready(function() {
             });
         });
         $("#name").val(availableNames[random]);
-        //localStorage.setItem("name", availableNames[random]);
+        //localStorage.setItem("name", availableNames[random]);                   // odkomentovat před ostrým nasazením !
         
         $("#info").fadeIn("slow");
     });
