@@ -9,11 +9,12 @@ $(document).ready(function() {
     else {
         $("#generate").attr("disabled", true);
         $("#generate").hide();
-        $("#name").val(name)
+        $("#name").val(name);
         $.getJSON("data.json", function(data){
             $.each(data.characters, function(i, field) {
                 if(field.name == name) {
                     $("#text1").val(field.text1);
+                    $("#text2").val(field.text2);
                 }
             });
         });
@@ -32,8 +33,6 @@ $(document).ready(function() {
             });
         });
         var random = Math.floor(Math.random() * (availableNames.length));
-        var text1 = "";
-        var text2 = "";
         $.getJSON("data.json", function(data){
             $.each(data.characters, function(i, field) {
                 if (field.name === availableNames[random]) {
@@ -47,15 +46,13 @@ $(document).ready(function() {
                         url: "handler.php",
                         data: ajax
                     });
-                    text1 = field.text1;
-                    text2 = field.text2;
+                    $("#text1").val(field.text1);
+                    $("#text2").val(field.text2);
                 }
             });
         });
         $("#name").val(availableNames[random]);
-        localStorage.setItem("name", availableNames[random]);
-        $("#text1").val(text1);
-        $("#text2").val(text2);
+        //localStorage.setItem("name", availableNames[random]);
         
         $("#info").fadeIn("slow");
     });

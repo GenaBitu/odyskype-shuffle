@@ -5,6 +5,10 @@ body {
     font-family: "Ubuntu", Helvetica, sans-serif;
 }
 
+input[type=button] {
+    margin-left: 110px;
+}
+
 textarea {
     box-shadow: inset 2px 2px 2px 0px #dddddd;
     padding: 7px;

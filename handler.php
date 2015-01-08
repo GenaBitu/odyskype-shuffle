@@ -17,6 +17,32 @@ if(is_ajax()) {
             $newJSON = json_encode($data);
             file_put_contents("data.json", $newJSON);
             break;
+        case "add":
+            $name = $_POST["name"];
+            $text1 = $_POST["text1"];
+            $text2 = $_POST["text2"];
+            $oldJSON = file_get_contents("data.json");
+            $data = json_decode($oldJSON, true);
+            
+            $data["characters"][] = array(
+                "name" => $name,
+                "available" => true,
+                "text1" => $text1,
+                "text2" => $text2
+            );
+            
+            $newJSON = json_encode($data);
+            file_put_contents("data.json", $newJSON);
+            break;
+        case "allow_all":
+            $oldJSON = file_get_contents("data.json");
+            $data = json_decode($oldJSON, true);
+            foreach ($data["characters"] as $key => $entry) {
+                $data["characters"][$key]["available"] = true;
+            }
+            $newJSON = json_encode($data);
+            file_put_contents("data.json", $newJSON);
+            break;
     }
 }
 else {
