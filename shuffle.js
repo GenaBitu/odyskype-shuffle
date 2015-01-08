@@ -27,11 +27,15 @@ $(document).ready(function() {
         var availableNames = [];
         $.getJSON("data.json", function(data){
             $.each(data.characters, function(i, field) {
-                if(field.available === true) {
+                if(field.available == true) {
                     availableNames.push(field.name);
                 }
             });
         });
+        if(availableNames.length == 0) {
+            alert("Došly postavy! Máš právo si osobně stěžovat (Jemnýmu).");
+            return;
+        }
         var random = Math.floor(Math.random() * (availableNames.length));
         $.getJSON("data.json", function(data){
             $.each(data.characters, function(i, field) {
