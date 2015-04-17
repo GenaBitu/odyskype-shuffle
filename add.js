@@ -5,7 +5,7 @@ $(document).ready(function() {
     $("#add").click(function() {
         $("#add").attr("disabled", true);
         
-        if($("#name").val() == "" || $("#text1").val() == "" || $("#text2").val() == ""){
+        if($("#name").val() === "" || $("#text1").val() === "" || $("#text2").val() === ""){
             alert("Pole nesmí zůstat prázdná!");
         }
         else {

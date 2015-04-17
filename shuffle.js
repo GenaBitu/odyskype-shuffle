@@ -2,17 +2,18 @@
 
 $(document).ready(function() {
     $.ajaxSetup({ async: false });
+    $('#generate').removeAttr("disabled");
     var name = localStorage.getItem("name");
-    if(name == undefined) {
+    if(name === null) {
         $("#info").hide();
-    }
+    } 
     else {
         $("#generate").attr("disabled", true);
         $("#generate").hide();
         $("#name").val(name);
         $.getJSON("data.json", function(data){
             $.each(data.characters, function(i, field) {
-                if(field.name == name) {
+                if(field.name === name) {
                     $("#text1").val(field.text1);
                     $("#text2").val(field.text2);
                 }
@@ -27,12 +28,12 @@ $(document).ready(function() {
         var availableNames = [];
         $.getJSON("data.json", function(data){
             $.each(data.characters, function(i, field) {
-                if(field.available == true) {
+                if(field.available === true) {
                     availableNames.push(field.name);
                 }
             });
         });
-        if(availableNames.length == 0) {
+        if(availableNames.length === 0) {
             alert("Došly postavy! Máš právo si osobně stěžovat (Jemnýmu).");
             return;
         }

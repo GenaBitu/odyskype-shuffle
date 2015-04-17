@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(//fonts.googleapis.com/css?family=Ubuntu);
 
 body {
     padding: 50px;
@@ -43,7 +43,7 @@ textarea {
 }
 
 .small {
-    height: 15px;
+    height: 20px;
     width: 200px;
 }
 

@@ -48,4 +48,3 @@ if(is_ajax()) {
 else {
     echo("<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>OdySkype LARP</title></head><body>Not that easy!</body></html>");
 }
-?>

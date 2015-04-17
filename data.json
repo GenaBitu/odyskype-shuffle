@@ -1,14 +1,1 @@
-{"characters": [
-    {
-        "name": "Mickey Mouse",
-        "available": true,
-        "text1": "Lorem ipsum JSON1 dolor sit amet, consectetur adipiscing elit.",
-        "text2": "Text2 Mickey"
-    },
-    {
-        "name": "Barbar Conan",
-        "available": true,
-        "text1": "Lorem ipsum JSON2 dolor sit amet, consectetur adipiscing elit.",
-        "text2": "Text2 Barbar"
-    }
-]}
+{"characters":[{"name":"Mickey Mouse","available":true,"text1":"Lorem ipsum JSON1 dolor sit amet, consectetur adipiscing elit.","text2":"Text2 Mickey"},{"name":"Barbar Conan","available":true,"text1":"Lorem ipsum JSON2 dolor sit amet, consectetur adipiscing elit.","text2":"Text2 Barbar"}]}

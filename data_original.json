@@ -11,4 +11,10 @@
         "text1": "Lorem ipsum JSON2 dolor sit amet, consectetur adipiscing elit.",
         "text2": "Text2 Barbar"
     }
+    {
+        "name": "Karel!",
+        "available": true,
+        "text1": "Je to on, je to on, Pražsekj démon!",
+        "text2": "Ten dééémon..."
+    }
 ]}
