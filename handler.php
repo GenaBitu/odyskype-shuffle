@@ -1,12 +1,12 @@
 <?php
 function is_ajax() {
-  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' && isset($_POST["action"]) && !empty($_POST["action"]);
+  return filter_has_var(INPUT_SERVER, "HTTP_X_REQUESTED_WITH") && strtolower(filter_input(INPUT_SERVER, "HTTP_X_REQUESTED_WITH")) == 'xmlhttprequest' && filter_has_var(INPUT_POST, "action") && !empty(filter_input(INPUT_POST, "action", FILTER_SANITIZE_STRING));
 }
 if(is_ajax()) {
-    $action = $_POST["action"];
+    $action = filter_input(INPUT_POST, "action", FILTER_SANITIZE_STRING);
     switch($action) {
         case "disable":
-            $name = $_POST["name"];
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
             $oldJSON = file_get_contents("data.json");
             $data = json_decode($oldJSON, true);
             foreach ($data["characters"] as $key => $entry) {
@@ -18,9 +18,9 @@ if(is_ajax()) {
             file_put_contents("data.json", $newJSON);
             break;
         case "add":
-            $name = $_POST["name"];
-            $text1 = $_POST["text1"];
-            $text2 = $_POST["text2"];
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+            $text1 = filter_input(INPUT_POST, "text1", FILTER_SANITIZE_STRING);
+            $text2 = filter_input(INPUT_POST, "text2", FILTER_SANITIZE_STRING);
             $oldJSON = file_get_contents("data.json");
             $data = json_decode($oldJSON, true);
             
